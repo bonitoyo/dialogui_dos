@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>jQuery UI Dialog - Dialogo modal con estilo personalizado</title>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+
+<link rel="stylesheet" href="jquery-ui-1.10.2.sunny.css" />
+
+<script>
+$(function () {
+$("#dialog").dialog({
+autoOpen: false,
+modal: true,
+buttons: {
+"Cerrar": function () {
+$(this).dialog("close");
+}
+}
+});
+$("#abrir")
+.button()
+.click(function () {
+$("#dialog").dialog("option", "width", 600);
+$("#dialog").dialog("option", "height", 300);
+$("#dialog").dialog("option", "resizable", false);
+$("#dialog").dialog("open");
+});
+});
+</script>
+</head>
+
+<body>
+Diálogo:
+<div id="dialog" title="Dialogo básico">
+<p>Diálogo básico modal con botón de cerrado. Estilo personalizado Sunny.</p>
+</div>
+
+<button id="abrir">Abrir diálogo</button>
+</body>
+
+</html>
